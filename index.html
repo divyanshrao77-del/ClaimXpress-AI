@@ -33,11 +33,11 @@
 <div class="modal-back" id="detailModal"><div class="modal"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><h3 style="margin:0">Claim details</h3><button class="btn outline" onclick="closeModal()">Close</button></div><div id="detailBody"></div></div></div><div id="toast" class="toast"></div>
 <script>
 /* SET THESE TWO VALUES AFTER CREATING YOUR SUPABASE PROJECT. Never put a service_role key here. */
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY";
+const SUPABASE_URL = "https://bmgrbmhqxpdjapetczek.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_Q9t2GzdThNV-kwiX5mhCmw_muOzT9CG";
 let sb=null,session=null,claims=[],profile=null,authMode="login";
 const $=id=>document.getElementById(id);
-function configured(){return https://bmgrbmhqxpdjapetczek.supabase.co/rest/v1/startsWith("https://")&&!SUPABASE_URL.includes("PASTE_")&&sb_publishable_Q9t2GzdThNV-kwiX5mhCmw_muOzT9CGslength>20&&!SUPABASE_ANON_KEY.includes("PASTE_")}
+function configured(){return /^https?:\/\//.test(SUPABASE_URL)&&SUPABASE_URL.includes(".supabase.co")&&!SUPABASE_URL.includes("PASTE_")&&!SUPABASE_ANON_KEY.includes("PASTE_")}
 function msg(id,text,kind="error"){const el=$(id);el.className=kind;el.textContent=text}
 function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",3200)}
 function money(n){return "₹"+Number(n||0).toLocaleString("en-IN")}
